@@ -17,5 +17,26 @@
 
 
 <ion-content padding>
+  <form (ngSubmit)="onAddContact(f.value)" #f="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-input type="text" placeholder="Texto" name="nombre" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Organización</ion-label>
+          <ion-input type="text" placeholder="Texto" name="organizacion" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Numero</ion-label>
+          <ion-input type="text" placeholder="123456789" name="numero" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+      <ion-label>Correo</ion-label>
+          <ion-input type="text" placeholder="name@example.com" name="correo" ngModel required></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button block type="submit" [disabled]="!f.valid">Acceptar</button>
+  </form>
 
 </ion-content>
